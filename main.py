@@ -50,7 +50,7 @@ def main():
     limit = int(input())
     year_month = f"{datetime_date.year}-{datetime_date.month}"
     bank = services.investment_bank(year_month, XLSX_file_read(), limit)
-    print(f"Сумму которую вы могли заработать за этот месяц - {bank}")
+    print(f"Сумму, которую вы могли заработать за этот месяц - {bank}")
 
 
 main()

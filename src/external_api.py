@@ -29,7 +29,8 @@ def get_currency(data):
             response = requests.get(url, headers=headers)
             currency_rates.append({"currency": i, "rate": round(response.json()["result"], 2)})
             logger.info(
-                f'Добавляем словарь {({"currency": i, "rate": round(response.json()["result"], 2)})} в список с ответами'
+                f'Добавляем словарь {({"currency": i, "rate": round(response.json()["result"], 2)})}'
+                f' в список с ответами'
             )
         except Exception as e:
             logger.error(f"Ошибка при API: {e}")
