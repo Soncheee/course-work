@@ -84,4 +84,3 @@ def test_main_sheet(mock_json, mock_open, mock_stocks, mock_currency, mock_xlsx)
         {"MSFT": 299.1},
         {"TSLA": 721.3},
     ]
-
