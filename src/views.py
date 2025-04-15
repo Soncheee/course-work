@@ -82,7 +82,7 @@ def main_sheet(date: str):
 
 def get_top_transactions(data):
     """Принимает на вход транзакций список транзакций,
-     сортируем его по возрастанию в цене и выводим 5 самых больших транзакций"""
+    сортируем его по возрастанию в цене и выводим 5 самых больших транзакций"""
     top_transactions = []
     sorted_file = sorted(data, key=lambda x: x.get("Сумма операции с округлением"), reverse=True)
     for i in range(min(5, len(sorted_file))):

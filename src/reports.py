@@ -19,7 +19,7 @@ logger.addHandler(file_handler)
 
 
 def report_file_write(filename: str = "report.txt"):
-    """Декоратор для сохранения результата функции-отчета в указанный файл."""
+    """Декоратор для сохранения результата функции-отчета в указанный файл"""
 
     def decorator(func):
         @wraps(func)

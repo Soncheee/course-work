@@ -29,7 +29,7 @@ def XLSX_file_read() -> Union[list[dict[Hashable, Any]], str]:
 
 
 def file_df():
-    """Возвращает DataFrame со списком словарей со всеми транзакциями"""
+    """Возвращает DataFrame со списком словарей со всеми транзакциями."""
     logger.info("Задаём путь до файла")
     base_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(base_dir, "..", "data")
