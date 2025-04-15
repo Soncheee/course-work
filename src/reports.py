@@ -19,7 +19,7 @@ logger.addHandler(file_handler)
 
 
 def report_file_write(filename: str = "report.txt"):
-    """Декоратор для сохранения результата функции-отчета в указанный файл."""
+    """Декоратор для сохранения результата функции-отчета в указанный файл"""
 
     def decorator(func):
         @wraps(func)
@@ -29,7 +29,8 @@ def report_file_write(filename: str = "report.txt"):
             report_dir = os.path.join(base_dir, "..", "reports")
             report_file_path = os.path.join(report_dir, filename)
             logger.info(
-                f"Создаём и открываем файл по пути {report_file_path} и записываем результат функции {func.__name__} = {result}"
+                f"Создаём и открываем файл по пути {report_file_path} и "
+                f"записываем результат функции {func.__name__} = {result}"
             )
             with open(report_file_path, "w", encoding="utf-8") as file:
                 file.write(str(result))

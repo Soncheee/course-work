@@ -38,7 +38,7 @@ def investment_bank(month: str, transactions: list[dict[Hashable, Any]], limit: 
 def description_filter(transactions: list[dict[Hashable, Any]], word: str) -> str:
     """Принимает на вход список транзакций
     и слово по которому надо фильтровать описание и категорию транзакций
-    и выводит отфитрованный список"""
+    и выводит отфильтрованный список."""
     logger.info(f"Делаем патерн слова {word}")
     pattern = re.compile(word, re.IGNORECASE)
     logger.info("Проходимся по списку и оставляем только нужные описания и транзакции")

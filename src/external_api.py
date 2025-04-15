@@ -20,6 +20,8 @@ logger.addHandler(file_handler)
 
 
 def get_currency(data):
+    '''Функция принимает курсы валют относительно RUB и
+    возвращает курсы валют'''
     currency_rates = []
     logger.info("Проходимся по списку валют пользователя")
     for i in data["user_currencies"]:
@@ -29,7 +31,8 @@ def get_currency(data):
             response = requests.get(url, headers=headers)
             currency_rates.append({"currency": i, "rate": round(response.json()["result"], 2)})
             logger.info(
-                f'Добавляем словарь {({"currency": i, "rate": round(response.json()["result"], 2)})} в список с ответами'
+                f'Добавляем словарь {({"currency": i, "rate": round(response.json()["result"], 2)})}'
+                f" в список с ответами"
             )
         except Exception as e:
             logger.error(f"Ошибка при API: {e}")
@@ -37,6 +40,7 @@ def get_currency(data):
 
 
 def get_stocks(data):
+    '''Функция принимает курсы валют и возвращает цены акций '''
     stock_prices = []
     logger.info("Проходимся по списку акций пользователя")
     for i in data["user_stocks"]:

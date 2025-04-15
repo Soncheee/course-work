@@ -8,6 +8,7 @@ from src.utils import XLSX_file_read
 
 
 def main():
+
     date = "2022-08-15 11:22:14"
     datetime_date = datetime.datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
     main_data = views.main_sheet(date)
@@ -50,7 +51,7 @@ def main():
     limit = int(input())
     year_month = f"{datetime_date.year}-{datetime_date.month}"
     bank = services.investment_bank(year_month, XLSX_file_read(), limit)
-    print(f"Сумму которую вы могли заработать за этот месяц - {bank}")
+    print(f"Сумму, которую вы могли заработать за этот месяц - {bank}")
 
 
 main()
